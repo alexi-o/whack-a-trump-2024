@@ -13,7 +13,7 @@
         class="trump"
         @click="whackTrump(trump)"
       >
-        <img :src="trump.src" />
+        <img :src="trump.src" class="trump-image" />
       </div>
       <div class="timer">Time: {{ timeLeft }} secs</div>
       <div class="score">Score: {{ score }}</div>
@@ -172,12 +172,18 @@ onMounted(fetchLeaderboard)
   width: 750px;
   height: 420px;
   background: url('@/assets/images/ovaloffice.png') no-repeat;
+  background-size: cover;
 }
 
 .trump {
   position: absolute;
-  height: 150px;
   width: 150px;
+  height: 150px;
+}
+
+.trump img {
+  width: 100%;
+  height: 100%;
 }
 
 .timer,
